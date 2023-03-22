@@ -7,7 +7,8 @@ import PopupWithForm from './PopupWithImage.js';
 import {
   initialCards,
   formConfig,
-  formSelectorPlace,
+  popUpProfileSelector,
+  popupPlaceSelector,
   formSelectorProfile,
   cardTemplate,
   cardsContainer,
@@ -88,10 +89,10 @@ const popupImage = new PopupWithImage('.pop-up_place_img');
 popupImage.setEventListeners();
 
 // FORM
-const formPlace = new PopupWithForm(formSelectorPlace, handlePlaceFormSubmit, '.profile__add-button');
+const formPlace = new PopupWithForm(popupPlaceSelector, handlePlaceFormSubmit, '.profile__add-button');
 formPlace.setEventListeners();
 // PROFILE
-const formProfile = new PopupWithForm(formSelectorProfile, handleProfileFormSubmit);
+const formProfile = new PopupWithForm(popUpProfileSelector, handleProfileFormSubmit);
 formProfile.setEventListeners();
 btnEditProfile.addEventListener('click', () => {
   profileInputName.value = profileName.textContent;

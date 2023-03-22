@@ -42,13 +42,14 @@ export const popUpList = document.querySelectorAll('.pop-up');
 
 // POP-UP // PLACE //
 export const popupSelector = '.pop-up';
+export const popupPlaceSelector = '.pop-up_place_add-place';
 export const popUpPlace = document.querySelector('.pop-up_place_add-place');
 export const btnPlaceAdd = document.querySelector('.profile__add-button');
 
 export const form = document.querySelector('.form');
 export const intutSelector = '.form__item';
 // FORM // PLACE //
-export const formSelectorPlace = '.form_place_add-place';
+
 export const placeForm = popUpPlace.querySelector('.form_place_add-place');
 export const placeInputName = placeForm.querySelector('.form__item_el_name');
 export const placeInputLink = placeForm.querySelector('.form__item_el_link');
@@ -60,7 +61,7 @@ export const profileInputName = profileForm.querySelector('.form__item_el_name')
 export const profileInputJob = profileForm.querySelector('.form__item_el_job');
 
 // POP-UP // PROFILE //
-
+export const popUpProfileSelector = '.pop-up_place_profile';
 export const popUpProfile = document.querySelector('.pop-up_place_profile');
 export const profile = document.querySelector('.profile');
 export const profileName = profile.querySelector('.profile__name');
