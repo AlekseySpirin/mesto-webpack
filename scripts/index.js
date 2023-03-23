@@ -3,7 +3,7 @@ import Card from './Card.js';
 import Section from './Section.js';
 import Popup from './Popup.js';
 import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithImage.js';
+import PopupWithForm from './PopupWithForm.js';
 import {
   initialCards,
   formConfig,
@@ -105,6 +105,10 @@ const formProfile = new PopupWithForm(
 );
 formProfile.setEventListeners();
 
+console.log(formProfile);
+console.log(formPlace);
+console.log(popupImage);
+
 btnEditProfile.addEventListener('click', () => {
   profileInputName.value = profileName.textContent;
   profileInputJob.value = profileInfo.textContent;
@@ -173,8 +177,8 @@ enableValidation(formConfig);
 // profile
 
 // profileForm.addEventListener('submit', handleProfileFormSubmit);
-
-// // place
+// console.log(profileForm);
+// // // place
 
 // placeForm.addEventListener('submit', handlePlaceFormSubmit);
 

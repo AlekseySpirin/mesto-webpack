@@ -4,8 +4,9 @@ class PopupWithForm extends Popup {
   constructor(popupSelector, formSelector, inputSelector, callbackSubmitForm) {
     super(popupSelector);
     this._popup = document.querySelector(popupSelector);
+    this._formElement = document.querySelector(formSelector);
     this._callbackSubmitForm = callbackSubmitForm;
-    this._formElement = formSelector;
+
     this._input = inputSelector;
   }
 
@@ -24,9 +25,9 @@ class PopupWithForm extends Popup {
   setEventListeners() {
     super.setEventListeners();
 
-    this._formElement.addEvenlisteners('submit', (evt) => {
-      evt.preventDefault();
+    this._formElement.addEventListener('submit', () => {
       this._callbackSubmitForm(this._getInputValues());
+
       this.close();
     });
   }
