@@ -50,7 +50,6 @@ const handleCardClick = (name, link) => {
 };
 
 const handleProfileFormSubmit = (evt) => {
-  evt.preventDefault();
   formValidators['edit-profile'].disableSubmitButton();
   profileName.textContent = profileInputName.value;
   profileInfo.textContent = profileInputJob.value;
@@ -60,8 +59,6 @@ const handleProfileFormSubmit = (evt) => {
 // place -func
 
 const handlePlaceFormSubmit = (evt) => {
-  evt.preventDefault();
-
   const cardInsert = new Card(
     {
       name: placeInputName.value,
@@ -104,10 +101,6 @@ const formProfile = new PopupWithForm(
   handleProfileFormSubmit,
 );
 formProfile.setEventListeners();
-
-console.log(formProfile);
-console.log(formPlace);
-console.log(popupImage);
 
 btnEditProfile.addEventListener('click', () => {
   profileInputName.value = profileName.textContent;
