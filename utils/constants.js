@@ -45,11 +45,12 @@ export const popupSelector = '.pop-up';
 export const popupPlaceSelector = '.pop-up_place_add-place';
 export const popUpPlace = document.querySelector('.pop-up_place_add-place');
 export const btnPlaceAdd = document.querySelector('.profile__add-button');
-
+export const btnPlaceAddSelector = '.profile__add-button';
+export const formSelector = '.form';
 export const form = document.querySelector('.form');
-export const intutSelector = '.form__item';
+export const inputSelector = '.form__item';
 // FORM // PLACE //
-
+export const placeFormSelector = '.form_place_add-place';
 export const placeForm = popUpPlace.querySelector('.form_place_add-place');
 export const placeInputName = placeForm.querySelector('.form__item_el_name');
 export const placeInputLink = placeForm.querySelector('.form__item_el_link');
@@ -70,7 +71,7 @@ export const profileInfo = profile.querySelector('.profile__info');
 // BTN-EDIT // PROFILE
 
 export const btnEditProfile = profile.querySelector('.profile__edit-button');
-
+export const btnEditProfileSelector = '.profile__edit-button';
 // POP-UP // IMG //
 
 export const popUpPlaceImg = document.querySelector('.pop-up_place_img');

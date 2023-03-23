@@ -1,21 +1,16 @@
 import Popup from './Popup.js';
-import form from '../utils/constants.js';
-import inputSelector from '../utils/constants.js';
-import btnPlaceAdd from '../utils/constants.js';
 
 class PopupWithForm extends Popup {
-  constructor(popupSelector, callbackSubmitForm, buttonSelector) {
+  constructor(popupSelector, formSelector, inputSelector, callbackSubmitForm) {
     super(popupSelector);
     this._popup = document.querySelector(popupSelector);
     this._callbackSubmitForm = callbackSubmitForm;
-    this._formElement = form;
-    this._openButton = document.querySelector(buttonSelector);
-    this.open = this.open.bind(this);
-    this._btnPlaceAdd = btnPlaceAdd;
+    this._formElement = formSelector;
+    this._input = inputSelector;
   }
 
   _getInputValues() {
-    this._inputList = this._element.querySelectorAll(inputSelector);
+    this._inputList = this._formElement.querySelectorAll(this._input);
 
     this._formValues = {};
 
@@ -27,17 +22,8 @@ class PopupWithForm extends Popup {
   }
 
   setEventListeners() {
-    super.setEventListeners;
-    this._btnPlaceAdd.addEvenlisteners('click', () => {
-      super.open();
-    });
-    this._openButton.addEventListener('click', (evt) => {
-      this.open;
+    super.setEventListeners();
 
-      //   if (evt.target.classList.contains('profile_type_open')) {
-      //     this.open;
-      //   }
-    });
     this._formElement.addEvenlisteners('submit', (evt) => {
       evt.preventDefault();
       this._callbackSubmitForm(this._getInputValues());

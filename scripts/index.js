@@ -9,7 +9,10 @@ import {
   formConfig,
   popUpProfileSelector,
   popupPlaceSelector,
+  formSelector,
+  placeFormSelector,
   formSelectorProfile,
+  inputSelector,
   cardTemplate,
   cardsContainer,
   // cardListSelector,
@@ -17,6 +20,8 @@ import {
   popUpPlace,
   btnPlaceAdd,
   placeForm,
+  btnPlaceAddSelector,
+  btnEditProfileSelector,
   placeInputName,
   placeInputLink,
   profileForm,
@@ -49,7 +54,7 @@ const handleProfileFormSubmit = (evt) => {
   formValidators['edit-profile'].disableSubmitButton();
   profileName.textContent = profileInputName.value;
   profileInfo.textContent = profileInputJob.value;
-  closePopUp(popUpProfile);
+  formProfile.close();
 };
 
 // place -func
@@ -67,7 +72,7 @@ const handlePlaceFormSubmit = (evt) => {
   );
   const cardElement = cardInsert.generateCard();
   cardsContainer.prepend(cardElement);
-  closePopUp(popUpPlace);
+  formPlace.close();
   formValidators['add-place'].resetValidation();
 };
 
@@ -88,16 +93,26 @@ const cardList = new Section(
 const popupImage = new PopupWithImage('.pop-up_place_img');
 popupImage.setEventListeners();
 
-// FORM
-const formPlace = new PopupWithForm(popupPlaceSelector, handlePlaceFormSubmit, '.profile__add-button');
+// POPUP-FORM-PLACE
+const formPlace = new PopupWithForm(popupPlaceSelector, placeFormSelector, inputSelector, handlePlaceFormSubmit);
 formPlace.setEventListeners();
-// PROFILE
-const formProfile = new PopupWithForm(popUpProfileSelector, handleProfileFormSubmit);
+// POPUP-FORM-PROFILE
+const formProfile = new PopupWithForm(
+  popUpProfileSelector,
+  formSelectorProfile,
+  inputSelector,
+  handleProfileFormSubmit,
+);
 formProfile.setEventListeners();
+
 btnEditProfile.addEventListener('click', () => {
   profileInputName.value = profileName.textContent;
   profileInputJob.value = profileInfo.textContent;
   formProfile.open();
+});
+
+btnPlaceAdd.addEventListener('click', () => {
+  formPlace.open();
 });
 // button - func
 
@@ -158,20 +173,10 @@ enableValidation(formConfig);
 // profile
 
 // profileForm.addEventListener('submit', handleProfileFormSubmit);
-// console.log(btnEditProfile);
-// btnEditProfile.addEventListener('click', () => {
-//   profileInputName.value = profileName.textContent;
-//   profileInputJob.value = profileInfo.textContent;
-//   formProfile.open();
-// });
 
-// place
+// // place
 
 // placeForm.addEventListener('submit', handlePlaceFormSubmit);
-console.log(btnPlaceAdd);
-btnPlaceAdd.addEventListener('click', () => {
-  formPlace.open();
-});
 
 // forms
 
