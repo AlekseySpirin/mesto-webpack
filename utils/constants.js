@@ -67,6 +67,8 @@ export const popUpProfile = document.querySelector('.pop-up_place_profile');
 export const profile = document.querySelector('.profile');
 export const profileName = profile.querySelector('.profile__name');
 export const profileInfo = profile.querySelector('.profile__info');
+export const profileNameSelector = '.profile__name';
+export const profileInfoSelector = '.profile__info';
 
 // BTN-EDIT // PROFILE
 
