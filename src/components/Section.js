@@ -1,6 +1,4 @@
-import Card from './Card.js';
-
-export default class Section {
+class Section {
   constructor({ data, renderer }, cardsContainer) {
     this._renderedItems = data;
     this._renderer = renderer;
@@ -23,3 +21,5 @@ export default class Section {
     });
   }
 }
+
+export default Section;
